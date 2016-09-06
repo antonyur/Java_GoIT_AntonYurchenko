@@ -7,7 +7,7 @@ public class BankSystemImpl implements BankSystem {
         Bank userBank = user.getBank();
         if (amount > userBank.getLimitOfWithdrawal())
             amount = userBank.getLimitOfWithdrawal();
-        user.setBalance(user.getBalance() - amount*(1 - 0.01*userBank.getCommission(amount)));
+        user.setBalance(user.getBalance() - amount*(1 + 0.01*userBank.getCommission(amount)));
     }
 
     @Override

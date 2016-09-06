@@ -5,6 +5,8 @@ public class USBank extends Bank {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
 
+    public USBank() {}
+
     @Override
     public int getLimitOfWithdrawal() {
         if (getCurrency() == Currency.USD)

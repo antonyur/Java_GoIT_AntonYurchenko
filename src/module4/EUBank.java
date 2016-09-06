@@ -6,6 +6,9 @@ public class EUBank extends Bank {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
 
+    public EUBank() {
+    }
+
     @Override
     public int getLimitOfWithdrawal() {
         if (getCurrency() == Currency.USD)
@@ -38,6 +41,7 @@ public class EUBank extends Bank {
         else
             return 0;
     }
+
 
     @Override
     public int getCommission(int amount) {

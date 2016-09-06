@@ -5,6 +5,9 @@ public class ChinaBank extends Bank{
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
 
+    public ChinaBank() {
+    }
+
     @Override
     public int getLimitOfWithdrawal() {
         if (getCurrency() == Currency.USD)
@@ -57,6 +60,7 @@ public class ChinaBank extends Bank{
             return 0;
 
     }
+
 
     @Override
     public String toString()
