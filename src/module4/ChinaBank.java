@@ -30,7 +30,7 @@ public class ChinaBank extends Bank{
     @Override
     public double getMonthlyRate() {
         if (getCurrency() == Currency.USD)
-            return 0.01;
+            return 1;
         else
         if (getCurrency() == Currency.EUR)
             return 0;
@@ -39,23 +39,29 @@ public class ChinaBank extends Bank{
     }
 
     @Override
-    public double getCommission() {
+    public int getCommission(int amount) {
         if (getCurrency() == Currency.USD) {
-            if (getAvrSalaryOfEmployee() <= 1000)
-                return 0.03;
+            if (amount <= 1000)
+                return 3;
             else
-                return 0.04;
+                return 4;
         }
         else
         if (getCurrency() == Currency.EUR) {
-            if (getAvrSalaryOfEmployee() <= 1000)
-                return 0.1;
+            if (amount <= 1000)
+                return 1;
             else
-                return 0.11;
+                return 11;
         }
         else
             return 0;
 
+    }
+
+    @Override
+    public String toString()
+    {
+        return "ChinaBank";
     }
 
 }

@@ -9,6 +9,9 @@ public abstract class Bank {
     private long rating;
     private long totalCapital;
 
+    public Bank()
+    {}
+
     public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         this.id = id;
         this.bankCountry = bankCountry;
@@ -22,7 +25,7 @@ public abstract class Bank {
     public abstract int getLimitOfWithdrawal();
     public abstract int getLimitOfFunding();
     public abstract double getMonthlyRate();
-    public abstract double getCommission();
+    public abstract int getCommission(int amount);
     public double moneyPaidMonthlyForSalary() {
         return 0;
     }

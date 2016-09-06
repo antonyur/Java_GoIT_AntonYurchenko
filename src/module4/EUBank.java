@@ -34,29 +34,35 @@ public class EUBank extends Bank {
             return 0;
         else
         if (getCurrency() == Currency.EUR)
-            return 0.01;
+            return 1;
         else
             return 0;
     }
 
     @Override
-    public double getCommission() {
+    public int getCommission(int amount) {
         if (getCurrency() == Currency.USD) {
-            if (getAvrSalaryOfEmployee() <= 1000)
-                return 0.05;
+            if (amount <= 1000)
+                return 5;
             else
-                return 0.07;
+                return 7;
         }
         else
         if (getCurrency() == Currency.EUR) {
-            if (getAvrSalaryOfEmployee() <= 1000)
-                return 0.02;
+            if (amount <= 1000)
+                return 2;
             else
-                return 0.04;
+                return 4;
         }
         else
             return 0;
 
+    }
+
+    @Override
+    public String toString()
+    {
+        return "EUBank";
     }
 
 }

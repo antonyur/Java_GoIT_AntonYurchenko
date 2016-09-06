@@ -5,16 +5,16 @@ public class User {
     private long id;
     private String name;
     private double balance;
-    private int monthsOfEmploymen;
+    private int monthsOfEmployment;
     private String companyName;
     private int salary;
     private Bank bank;
 
-    public User(long id, String name, double balance, int monthsOfEmploymen, String companyName, int salary, Bank bank) {
+    public User(long id, String name, double balance, int monthsOfEmployment, String companyName, int salary, Bank bank) {
         this.id = id;
         this.name = name;
         this.balance = balance;
-        this.monthsOfEmploymen = monthsOfEmploymen;
+        this.monthsOfEmployment = monthsOfEmployment;
         this.companyName = companyName;
         this.salary = salary;
         this.bank = bank;
@@ -44,12 +44,12 @@ public class User {
         this.balance = balance;
     }
 
-    public int getMonthsOfEmploymen() {
-        return monthsOfEmploymen;
+    public int getMonthsOfEmployment() {
+        return monthsOfEmployment;
     }
 
-    public void setMonthsOfEmploymen(int monthsOfEmploymen) {
-        this.monthsOfEmploymen = monthsOfEmploymen;
+    public void setMonthsOfEmployment(int monthsOfEmployment) {
+        this.monthsOfEmployment = monthsOfEmployment;
     }
 
     public String getCompanyName() {
@@ -79,6 +79,6 @@ public class User {
     @Override
     public String toString()
     {
-        return String.format("%s %s", name, balance);
+        return String.format("User{ name=%s bank=%s balance=%s}", name, bank, balance);
     }
 }

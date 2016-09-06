@@ -30,31 +30,37 @@ public class USBank extends Bank {
     @Override
     public double getMonthlyRate() {
         if (getCurrency() == Currency.USD)
-            return 0.01;
+            return 1;
         else
         if (getCurrency() == Currency.EUR)
-            return 0.015;
+            return 1.5;
         else
             return 0;
     }
 
     @Override
-    public double getCommission() {
+    public int getCommission(int amount) {
         if (getCurrency() == Currency.USD) {
-            if (getAvrSalaryOfEmployee() <= 1000)
-                return 0.05;
+            if (amount <= 1000)
+                return 5;
             else
-                return 0.07;
+                return 7;
         }
         else
         if (getCurrency() == Currency.EUR) {
-            if (getAvrSalaryOfEmployee() <= 1000)
-                return 0.06;
+            if (amount <= 1000)
+                return 6;
             else
-                return 0.08;
+                return 8;
         }
         else
             return 0;
 
+    }
+
+    @Override
+    public String toString()
+    {
+        return "USBank";
     }
 }
