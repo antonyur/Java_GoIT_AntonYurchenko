@@ -7,7 +7,7 @@ public class Main {
 
     private static int arrSize = 10;
 
-    public static ArrayList<Order> descendingOrder(ArrayList<Order> orderList){
+    public static List<Order> descendingOrder(ArrayList<Order> orderList){
         ArrayList<Order> orderList1 = new ArrayList<Order>(orderList);
         orderList1.sort(new Comparator<Order>(){
             @Override
@@ -19,7 +19,7 @@ public class Main {
         return orderList1;
     }
 
-    public static ArrayList<Order> ascendingOrderByPriceAndUserCity(ArrayList<Order> orderList){
+    public static List<Order> ascendingOrderByPriceAndUserCity(ArrayList<Order> orderList){
         ArrayList<Order> orderList1 = new ArrayList<Order>();
         orderList1.addAll(orderList);
         orderList1.get(0).setPrice(orderList1.get(1).getPrice());
@@ -37,7 +37,7 @@ public class Main {
         return orderList1;
     }
 
-    public static ArrayList<Order> ascendingOrderByItemNameAndShopIdAndUserCity(ArrayList<Order> orderList){
+    public static List<Order> ascendingOrderByItemNameAndShopIdAndUserCity(ArrayList<Order> orderList){
         ArrayList<Order> orderList1 = new ArrayList<Order>(orderList);
         orderList1.sort(new Comparator<Order>() {
             @Override
