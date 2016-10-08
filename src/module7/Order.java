@@ -1,6 +1,7 @@
 package module7;
 
 import java.util.Currency;
+import java.util.Objects;
 
 public class Order {
     private long id;
@@ -9,18 +10,6 @@ public class Order {
     private String itemName;
     private String shopIdentificator;
     private User user;
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", price=" + price +
-                ", currency=" + currency +
-                ", itemName='" + itemName + '\'' +
-                ", shopIdentificator='" + shopIdentificator + '\'' +
-                ", user=" + user +
-                '}';
-    }
 
     public Order(long id, int price, Currency currency, String itemName, String shopIdentificator, User user) {
         this.id = id;
@@ -78,5 +67,35 @@ public class Order {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", price=" + price +
+                ", currency=" + currency +
+                ", itemName='" + itemName + '\'' +
+                ", shopIdentificator='" + shopIdentificator + '\'' +
+                ", user=" + user +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Order)) return false;
+        Order order = (Order) o;
+        return getId() == order.getId() &&
+                getPrice() == order.getPrice() &&
+                Objects.equals(getCurrency(), order.getCurrency()) &&
+                Objects.equals(getItemName(), order.getItemName()) &&
+                Objects.equals(getShopIdentificator(), order.getShopIdentificator()) &&
+                Objects.equals(getUser(), order.getUser());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getPrice(), getCurrency(), getItemName(), getShopIdentificator(), getUser());
     }
 }

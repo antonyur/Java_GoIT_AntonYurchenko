@@ -36,14 +36,11 @@ public class Main4Tree {
         });
         for (int i=1; i<arrSize; i++)//only arrSize-1, because 1 element is duplicated
         {
-            String city = "Kyiv";
-            if (i%2==0)
-                city = "Dnipro";
+            String city = i%2==0 ? "Dnipro" : "Kyiv";
+
             User user = new User(i,"FirstName"+i,"LastName"+i,city,100*i);
 
-            Currency c = Currency.getInstance("USD");
-            if (i > arrSize/2)
-                c = Currency.getInstance("UAH");
+            Currency c = i > arrSize/2 ? c = Currency.getInstance("UAH") : Currency.getInstance("USD");
 
             int initPrice = 500;
 

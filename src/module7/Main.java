@@ -62,14 +62,11 @@ public class Main {
         ArrayList<Order> orderList = new ArrayList<>();
         for (int i=1; i<=arrSize; i++)
         {
-            String city = "Kyiv";
-            if (i%2==0)
-                city = "Dnipro";
+            String city = i%2==0 ? "Dnipro" : "Kyiv";
+
             User user = new User(i,"FirstName"+i,"LastName"+i,city,100*i);
 
-            Currency c = Currency.getInstance("USD");
-            if (i > arrSize/2)
-                c = Currency.getInstance("UAH");
+            Currency c = i > arrSize/2 ? c = Currency.getInstance("UAH") : Currency.getInstance("USD");
 
             int initPrice = 500;
 
@@ -99,10 +96,14 @@ public class Main {
         System.out.println("2 and 3 elements are equal");
         System.out.println(orderList4);
 
-        Set<Order> noDuplicates = new LinkedHashSet<Order>(orderList4);
+        Set<Order> noDuplicates = new LinkedHashSet<Order>(orderList4);//LinkedHashSet is used to keep order
 
         System.out.println("noDuplicates");
         System.out.println(noDuplicates);
+
+        orderList4 = new ArrayList<>(noDuplicates);
+        System.out.println("orderList4 with noDuplicates with original order");
+        System.out.println(orderList4);
 
         //delete items where price less than 1500
         List<Order> orderList5 = new ArrayList<Order>(orderList);
@@ -120,6 +121,7 @@ public class Main {
         List<Order> orderListUSD = new ArrayList<Order>();
         List<Order> orderListUAH = new ArrayList<Order>();
 
+        //we can use for(Order o : orderList) here also
         Iterator<Order> itr = orderList.iterator();
         while (itr.hasNext()) {
             //System.out.println(itr.next());
