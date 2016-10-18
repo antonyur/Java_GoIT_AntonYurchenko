@@ -40,6 +40,16 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T> {
     }
 
     @Override
+    public void deleteById(long id) {
+
+    }
+
+    @Override
+    public T get(long id) {
+        return null;
+    }
+
+    @Override
     public List<T> getList() {
         return objectList;
     }
