@@ -6,29 +6,24 @@ import java.util.List;
 
 public class UserDAOImpl extends AbstractDAOImpl<User> {
 
-    @Override
-    public User save(User u) {
-        return super.save(u);
+    public User saveUser(User u) {
+        return save(u);
     }
 
-    @Override
-    public void delete(User u) {
-        super.delete(u);
+    public void deleteUser(User u) {
+        delete(u);
     }
 
-    @Override
-    public void deleteAll(List<User> userList) {
-        super.deleteAll(userList);
+    public void deleteAllFromList(List<User> userList) {
+        deleteAll(userList);
     }
 
-    @Override
-    public void saveAll(List<User> userList) {
-        super.saveAll(userList);
+    public void saveAllFromList(List<User> userList) {
+        saveAll(userList);
     }
 
-    @Override
-    public List<User> getList() {
-        return super.getList();
+    public List<User> getUserList() {
+        return getList();
     }
 
     @Override
