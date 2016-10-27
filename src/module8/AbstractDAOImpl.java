@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class AbstractDAOImpl<T> implements AbstractDAO<T> {
+public class AbstractDAOImpl<T extends BaseEntity> implements AbstractDAO<T> {
     private List<T> objectList;
 
     public AbstractDAOImpl() {
@@ -41,11 +41,23 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T> {
 
     @Override
     public void deleteById(long id) {
-
+        Iterator<T> itr = objectList.iterator();
+        while(itr.hasNext()) {
+            T obj = itr.next();
+            if (obj.getId() == id) {
+                delete(obj);
+                break;
+            }
+        }
     }
 
     @Override
     public T get(long id) {
+        for (T obj : objectList) {
+            if (obj.getId() == id)
+                return obj;
+        }
+
         return null;
     }
 

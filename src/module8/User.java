@@ -3,22 +3,22 @@ package module8;
 
 import java.util.Objects;
 
-public class User {
+public class User extends BaseEntity {
     private long id;
     private String name;
-
 
     public User(long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public long getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
+    }
+
+    @Override
+    public long getId() {
+        return id;
     }
 
     @Override
